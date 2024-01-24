@@ -9,7 +9,7 @@ def tampilkan_menu(cat):
 
 #LAKI
 def tampilkan_pria(pria):
-    print("\n===== UNIQLO =====")
+    print("\n===== UNIQLO : PRIA =====")
     print("Daftar Produk:")
 
     for kategori, produk in pria.items():
@@ -24,9 +24,9 @@ def beli_produk(pria, keranjang, prod, jumlah):
     total_harga = produk['harga'] * jumlah
     keranjang.append({'nama': produk['nama'], 'jumlah': jumlah, 'total_harga': total_harga})
 
-#BUKAN LAKI
+#WANITA
 def tampilkan_wanita(wanita):
-    print("\n===== UNIQLO =====")
+    print("\n===== UNIQLO : WANITA =====")
     print("Daftar Produk:")
 
     for kategori, produk in wanita.items():
@@ -43,7 +43,7 @@ def beli_produk(wanita, keranjang, prod, jumlah):
 
 #ANAK
 def tampilkan_anak(anak):
-    print("\n===== UNIQLO =====")
+    print("\n===== UNIQLO : ANAK =====")
     print("Daftar Produk:")
 
     for kategori, produk in anak.items():
@@ -59,8 +59,8 @@ def beli_produk(anak, keranjang, prod, jumlah):
     keranjang.append({'nama': produk['nama'], 'jumlah': jumlah, 'total_harga': total_harga})
 
 #BAYI
-def tampilkan_anak(bayi):
-    print("\n===== UNIQLO =====")
+def tampilkan_bayi(bayi):
+    print("\n===== UNIQLO : BAYI =====")
     print("Daftar Produk:")
 
     for kategori, produk in bayi.items():
@@ -104,34 +104,40 @@ def pilih_metode_pembayaran():
         kode_pembayaran = random.randint(100, 999)
         print(f"\n===== Kode Pembayaran {metode_pembayaran} =====")
         print(f"Kode Pembayaran Anda: 230{kode_pembayaran}")
-        print("===========================================")
-        print("Silahkan Bayar di Counter UNIQLO Terdekat")
+        print("============================================")
 
     elif pilihan == '2':
-        print("\nMetode Pembayaran:")
-        print("1. BNI")
-        print("2. BCA")
-        print("3. Mandiri")
-        ATM = input("Pilih metode pembayaran (1/2/3): ")
+        while True:
+            print("\nMetode Pembayaran:")
+            print("1. BNI")
+            print("2. BCA")
+            print("3. Mandiri")
+
+            ATM = input("Pilih metode pembayaran (1/2/3): ")
+
+            if ATM in ['1','2','3']:
+                break
+            else:
+                print("Pilihan tidak valid. Silakan pilih Bank yang tersedia.")
+
         if ATM == '1':
             metode_pembayaran = "BNI"
             kode_pembayaran = random.randint(100000000, 999999999)
-            print(f"\n===== Kode Pembayaran {metode_pembayaran} ==========")
+            print(f"\n===== Kode Pembayaran {metode_pembayaran} =====")
             print(f"Kode Pembayaran Anda: 1{kode_pembayaran}")
-            print("====================================")
+            print("=========================================")
         elif ATM == '2':
             metode_pembayaran = "BCA"
             kode_pembayaran = random.randint(1000000, 9999999)
-            print(f"\n======= Kode Pembayaran {metode_pembayaran} =========")
+            print(f"\n======= Kode Pembayaran {metode_pembayaran} =======")
             print(f"Kode Pembayaran Anda: 262{kode_pembayaran}")
-            print("=====================================")
+            print("===================================")
         elif ATM == '3':
             metode_pembayaran = "Mandiri"
             kode_pembayaran = random.randint(100000000, 999999999)
-            print(f"\n======= Kode Pembayaran {metode_pembayaran} ==========")
+            print(f"\n======= Kode Pembayaran {metode_pembayaran} =======")
             print(f"Kode Pembayaran Anda: 157{kode_pembayaran}")
-            print("=========================================")
-        print("Silahkan bayar di Bank/ATM Terdekat")
+            print("=======================================")
 
     return metode_pembayaran
 
@@ -218,7 +224,7 @@ def belanja():
                 print("Produk tidak valid. Silakan pilih Produk yang tersedia.")
 
         elif kategori == '4':
-            tampilkan_anak(bayi)
+            tampilkan_bayi(bayi)
 
             prod = input("Pilih Produk yang diinginkan: ")
             if prod in bayi:
@@ -237,6 +243,7 @@ def belanja():
     
     tampilkan_keranjang(keranjang)
     metode_pembayaran = pilih_metode_pembayaran()
+    print("Silahkan Melakukan Pembayaran \n")
     
 
 belanja()
