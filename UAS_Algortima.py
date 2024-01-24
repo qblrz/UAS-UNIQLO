@@ -3,7 +3,7 @@ import random
 #KATEGORI
 def tampilkan_menu(cat):
     print("\n===== UNIQLO =====")
-    print("Daftar Produk:")
+    print("Daftar Kategori:")
     for kategori, kat in cat.items():
         print(f"{kategori}. {kat['nama']}")
 
