@@ -9,7 +9,7 @@ def tampilkan_menu(cat):
 
 #LAKI
 def tampilkan_pria(pria):
-    print("\n===== UNIQLO : PRIA =====")
+    print("\n===== UNIQLO : PRIA=====")
     print("Daftar Produk:")
 
     for kategori, produk in pria.items():
@@ -26,7 +26,7 @@ def beli_produk(pria, keranjang, prod, jumlah):
 
 #WANITA
 def tampilkan_wanita(wanita):
-    print("\n===== UNIQLO : WANITA =====")
+    print("\n===== UNIQLO : WANITA=====")
     print("Daftar Produk:")
 
     for kategori, produk in wanita.items():
@@ -104,7 +104,7 @@ def pilih_metode_pembayaran():
         kode_pembayaran = random.randint(100, 999)
         print(f"\n===== Kode Pembayaran {metode_pembayaran} =====")
         print(f"Kode Pembayaran Anda: 230{kode_pembayaran}")
-        print("============================================")
+        print("=========================================")
 
     elif pilihan == '2':
         while True:
@@ -137,7 +137,7 @@ def pilih_metode_pembayaran():
             kode_pembayaran = random.randint(100000000, 999999999)
             print(f"\n======= Kode Pembayaran {metode_pembayaran} =======")
             print(f"Kode Pembayaran Anda: 157{kode_pembayaran}")
-            print("=======================================")
+            print("====================================")
 
     return metode_pembayaran
 
